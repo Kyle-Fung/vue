@@ -10,14 +10,15 @@ import vueRouter from 'vue-router';
 Vue.use(vueRouter);
 
 // 3.0.2 导入路由规则对应的组件对象
-import login from './components/account/login.vue';
-import register from './components/account/register.vue';
+import home from './components/Home.vue';
+import shopcar from './components/shopcar/car.vue';
 
 // 3.0.2 定义路由规则
 var router1 = new vueRouter({
+	linkActiveClass:"mui-active",
 	routes:[
-		{path:'/login',component:login}, 
-		{path:'/register',component:register}
+		{path:'/home',component:home}, 
+		{path:'/shopcar',component:shopcar},
 	]
 	});
 
@@ -34,6 +35,10 @@ import '../statics/mui/css/mui.css';
 
 // 6.0 导入一个当前系统的全局基本样式
 import '../statics/css/site.css';
+
+//导入vue-resource
+import vueresource from 'vue-resource'
+Vue.use(vueresource);
 
 // 7.0 利用Vue对象进行解析渲染
 new Vue({
