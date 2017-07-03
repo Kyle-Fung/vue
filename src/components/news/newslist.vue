@@ -2,7 +2,7 @@
     <div id = "tmpl">
         <ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media" v-for = "item in list">
-					<a href="javascript:;" class="">
+					<router-link v-bind="{to:'/news/newsinfo/'+item.id}">
 						<img class="mui-media-object mui-pull-left" :src="item.img_url">
 						<div class="mui-media-body">
 							{{item.title}}
@@ -12,7 +12,7 @@
                                 <span class="click">发表时间：{{item.click}}</span>
                             </div>
 						</div>
-					</a>
+					</router-link>
 				</li>
 				
 			</ul>

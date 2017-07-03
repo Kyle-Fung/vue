@@ -13,6 +13,7 @@ Vue.use(vueRouter);
 import home from './components/Home.vue';
 import shopcar from './components/shopcar/car.vue';
 import newslist from './components/news/newslist.vue';
+import newsinfo from './components/news/newsinfo.vue';
 
 
 
@@ -20,10 +21,16 @@ import newslist from './components/news/newslist.vue';
 var router1 = new vueRouter({
 	linkActiveClass:"mui-active",
 	routes:[
-		{path:'/',redirect:'/home'}, 
+		//进入时默认跳转到主页
+		{path:'/',redirect:'/home '}, 
+		//主页
 		{path:'/home',component:home}, 
+		//购物车
 		{path:'/shopcar',component:shopcar},
-		{path:'/news/newslist',component:newslist}
+		//新闻资讯列表
+		{path:'/news/newslist',component:newslist},
+		//新闻资讯详情
+		{path:'/news/newsinfo/:id',component:newsinfo},
 	]
 	});
 
