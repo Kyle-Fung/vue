@@ -21,7 +21,7 @@
 
 
 <script>
-
+    import commom from '../../kits/common.js'
     import { Toast } from 'mint-ui';
     export default {
         data(){
@@ -37,7 +37,7 @@
         methods:{
             //获取api中的新闻咨询数据
             getnewslist(){
-                var url = "http://www.lovegf.cn:8899/api/getnewslist";
+                var url = commom.apidomain+ '/api/getnewslist';
                 this.$http.get(url).then(function(res){
                     var body = res.body;
                     if(res.status != 0){

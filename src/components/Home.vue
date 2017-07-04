@@ -42,6 +42,7 @@
 
 
 <script>
+    import common from '../kits/common.js'
     import { Toast } from 'mint-ui';
     export default {
         data(){
@@ -54,7 +55,7 @@
         },
         methods:{
             getimgs(){
-                var url = 'http://www.lovegf.cn:8899/api/getlunbo';
+                var url =common.apidomain+'/api/getlunbo';
                 this.$http.get(url).then(function(res){
                     var data = res.body;
                     //错误处理

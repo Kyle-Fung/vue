@@ -7,14 +7,20 @@
        <div class="content" v-html="info.content">
             
        </div>
+
+       <comment :id = 'id'></comment>
    </div>
  </template>
 
 
  <script>
+    import commom from '../../kits/common.js'
     import { Toast } from 'mint-ui';
-
+    import comment from '../subcom/comment.vue';
     export default {
+        components:{
+            comment
+        },
         data(){
             return{
                 id:0,
@@ -27,7 +33,7 @@
         },
         methods:{
             getinfo(){
-                var url = 'http://www.lovegf.cn:8899/api/getnew/'+this.id;
+                var url = commom.apidomain+     '/api/getnew/'+this.id;
                 this.$http.get(url).then(function(res){
                     var body = res.body;
                     if(body.status != 0){
